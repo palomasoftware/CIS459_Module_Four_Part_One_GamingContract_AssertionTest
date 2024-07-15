@@ -10,6 +10,10 @@ npm install web3
 npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
    
 
+mkdir gaming
+cd gaming
+npx hardhat init
+cd contract
 
 
 
