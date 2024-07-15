@@ -1,0 +1,45 @@
+Compiled 1 Solidity file successfully (evm target: paris).
+Welcome to Node.js v18.19.1.
+Type ".help" for more information.
+> const signers = await ethers.getSigners();
+undefined
+> const contract =  await ethers.getContractFactory("Gaming")
+undefined
+> const cd = await contract.deploy()
+undefined
+> const [deployer] = await ethers.getSigners();
+undefined
+            
+
+Uncaught SyntaxError: missing ) after argument list
+> cd.fundGame({value: ethers.parseEther("100.0")})
+Promise {
+  <pending>,
+  [Symbol(async_id_symbol)]: 4726,
+  [Symbol(trigger_async_id_symbol)]: 14
+}
+> await ethers.provider.getBalance(cd.target)
+100000000000000000000n
+> await ethers.provider.getBalance(signers[0])
+9899999020535616744891n
+>
+
+
+> const val2 = await ethers.provider.getBalance(signers[0])
+
+await cd.winOrLose(10, true, {from: signers[0] ,value: ethers.parseEther("21.0") })
+
+> val1
+9896998827779994338625n
+> val2
+9875998814539927327409n
+>
+
+
+> const bal1 = await ethers.provider.getBalance(cd2.target)
+> await cd2.winOrLose(10, true, {from: signers[0] ,value: ethers.parseEther("21.0") })
+
+> const bal2 = await ethers.provider.getBalance(cd2.target)
+> await cd2.winOrLose(10, true, {from: signers[0] ,value: ethers.parseEther("21.0") })
+
+ assert.equal((bal1 + ethers.parseEther("21.0")), (bal2 ), 'the amount will have increased by 21 ether')
