@@ -18,6 +18,10 @@ cd contract
 
 
 
+npx hardhat node --hostname localhost    # make sure to run as localhost vs the dns
+
+
+npx hardhat console --network localhost
 
 
 
